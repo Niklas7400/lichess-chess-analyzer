@@ -27,7 +27,7 @@ Das Skript verwendet **Stockfish** zur Bewertung der Züge und **OpenAI GPT** (z
 ## Installation
 
 ```bash
-git clone https://github.com/deinusername/lichess-chess-analyzer.git
+git clone https://github.com/Niklas7400/lichess-chess-analyzer.git
 cd lichess-chess-analyzer
 pip install -r requirements.txt
 
