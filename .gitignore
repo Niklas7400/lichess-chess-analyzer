@@ -5,3 +5,8 @@ output/
 .env
 *.json.bak
 bin/
+.env.*
+!.env.example
+node_modules/
+web/.next/
+web/node_modules/

@@ -11,6 +11,7 @@ import requests
 from openai import OpenAI
 
 RESULT_MARKER = "RESULT_JSON:"
+DEFAULT_OPENAI_MODEL = "gpt-5.4-mini"
 
 
 def parse_args():
@@ -64,6 +65,7 @@ def main():
         print("Fehler: Umgebungsvariable OPENAI_API_KEY ist nicht gesetzt.", file=sys.stderr)
         sys.exit(1)
 
+    openai_model = os.environ.get("OPENAI_MODEL", DEFAULT_OPENAI_MODEL)
     stockfish_path = os.environ.get("STOCKFISH_PATH", "/usr/games/stockfish")
     if not os.path.exists(stockfish_path):
         print(f"Fehler: Stockfish nicht gefunden unter '{stockfish_path}'.", file=sys.stderr)
@@ -229,7 +231,7 @@ Partie-Zuege:
 
         try:
             gpt_response = client.chat.completions.create(
-                model="gpt-5.4-mini",
+                model=openai_model,
                 messages=[{"role": "user", "content": prompt}],
             )
         except Exception as exc:

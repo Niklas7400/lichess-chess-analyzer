@@ -35,6 +35,8 @@ python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 
 export OPENAI_API_KEY=sk-...
+# optional: anderes OpenAI-Modell (Standard: gpt-5.4-mini)
+export OPENAI_MODEL=gpt-5.4-mini
 # optional, falls Stockfish nicht unter /usr/games/stockfish liegt:
 export STOCKFISH_PATH=/pfad/zu/stockfish
 
